@@ -4,30 +4,41 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aanbestedingsplanner</title>
 <style>
-:root{--navy:#20364f;--blue:#31658e;--teal:#287d78;--bg:#f3f5f8;--white:#fff;--text:#263445;--muted:#687789;--line:#dce3eb;--red:#b42318;--amber:#9a5a00;--green:#23734d;--pale:#edf3f8}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 "Segoe UI",Arial,sans-serif}.top{background:var(--navy);color:white;padding:22px max(18px,calc((100vw - 1250px)/2));display:flex;justify-content:space-between;align-items:center;gap:16px}.top h1{margin:0;font-size:23px}.top p{margin:4px 0 0;color:#dce7f1}.mark{display:flex;gap:13px;align-items:center}.logo{background:white;color:var(--navy);width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:20px;font-weight:800}.top button{background:#fff;color:var(--navy);border:0;border-radius:8px;padding:10px 14px;font-weight:700}main{max-width:1250px;margin:22px auto;padding:0 16px}.callout{border:1px solid #e8d49a;background:#fff8e5;padding:12px 14px;border-radius:10px;margin-bottom:16px}.layout{display:grid;grid-template-columns:355px 1fr;gap:16px;align-items:start}.panel{background:white;border:1px solid var(--line);border-radius:13px;padding:17px;margin-bottom:16px;box-shadow:0 4px 16px #20364f0a}.panel h2{font-size:16px;color:var(--navy);margin:0 0 13px}.field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}.field label{font-size:12px;font-weight:700;color:#506075}.field input,.field select,.field textarea{width:100%;padding:9px 10px;border:1px solid #cbd5df;border-radius:7px;background:white;font:inherit;color:var(--text)}.field textarea{min-height:60px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btns{display:flex;flex-wrap:wrap;gap:8px}.btn{padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:white;color:var(--text);cursor:pointer}.btn.primary{background:var(--navy);border-color:var(--navy);color:white;font-weight:700}.btn.alt{background:#edf3f8}.btn.danger{color:var(--red)}.small{font-size:12px;color:var(--muted)}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:9px}table{width:100%;border-collapse:collapse;min-width:640px}th{text-align:left;background:#edf2f6;color:#4c5e72;text-transform:uppercase;font-size:11px;letter-spacing:.04em;padding:10px}td{padding:10px;border-top:1px solid #e8edf2;vertical-align:middle}td input,td select{padding:6px;border:1px solid #cbd5df;border-radius:6px;width:100%;min-width:70px}td input[type=number]{width:75px}.phase{font-weight:700;color:var(--navy)}.date{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:650}.pill{display:inline-block;padding:3px 7px;border-radius:20px;font-size:11px;font-weight:700}.pill.red{background:#ffefee;color:var(--red)}.pill.amber{background:#fff4dc;color:var(--amber)}.pill.green{background:#e7f5ec;color:var(--green)}.date-alert{display:inline-block;margin-top:4px;padding:3px 6px;border-radius:5px;background:#fff0e6;color:#9a3412;font-size:11px;font-weight:700}.date-alert.holiday{background:#ffefee;color:var(--red)}.group-row td{background:#287d78;color:white;font-weight:750;padding:8px 10px}.group-row button{background:#fff;color:#20364f;border:0;border-radius:6px;padding:4px 8px;margin-left:6px;cursor:pointer;font-weight:650}.milestone-row.collapsed{display:none}.group-date{float:right;font-size:12px;font-weight:600;color:#e8f4f7}.alerts-panel{margin-top:12px;padding:11px 13px;border:1px solid #f0c9a8;background:#fff8f1;border-radius:9px}.alerts-panel h3{font-size:13px;margin:0 0 7px;color:#9a3412}.alerts-panel ul{margin:5px 0 0;padding-left:18px}.alerts-panel li{margin:4px 0}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}.stat{background:#f7f9fb;border:1px solid var(--line);border-radius:9px;padding:12px}.stat span{display:block;font-size:11px;color:var(--muted)}.stat strong{display:block;color:var(--navy);font-size:20px;margin-top:3px}.timeline{margin-top:14px;display:flex;flex-direction:column;gap:9px}.time-row{display:grid;grid-template-columns:175px 1fr 150px;gap:10px;align-items:center}.phase-time-row{margin:3px 0}.phase-time-row .time-name{font-size:12px;white-space:nowrap}.phase-time-row .bar-bg{height:12px}.phase-time-row .time-date{font-size:11px;white-space:nowrap}.time-name{font-size:12px;font-weight:650}.bar-bg{height:18px;background:#edf1f5;border-radius:5px;overflow:hidden;position:relative}.bar{height:100%;background:#5e91b8;border-radius:5px;min-width:2px}.bar.last{background:var(--teal)}.time-date{font-size:11px;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}.warning{color:var(--red);font-weight:700}.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin:10px 0}.dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;background:#5e91b8}.dot.teal{background:var(--teal)}.empty{text-align:center;color:var(--muted);padding:24px}.footer{color:var(--muted);font-size:11px;text-align:center;padding:12px}.view-tabs{display:flex;gap:8px;margin:0 0 14px}.view-tab{padding:9px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--navy);font-weight:700;cursor:pointer}.view-tab.active{background:var(--navy);color:white}.vacation-comparison{min-width:760px!important;width:100%;border-collapse:collapse}.vacation-comparison th{background:#2b9eb5;color:white;text-transform:none;letter-spacing:0;font-size:12px;padding:7px;text-align:left}.vacation-comparison td{border:1px solid #222;padding:5px 7px;font-size:12px;color:#1f2937}.vacation-wide{overflow-x:auto;border:1px solid #d5dde5;border-radius:6px}.vacation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.vacation-region{border:1px solid var(--line);border-radius:9px;overflow:hidden}.vacation-region h3{background:#287d78;color:#fff;margin:0;padding:9px;font-size:14px}.vacation-region table{min-width:0;width:100%}.vacation-region th,.vacation-region td{padding:7px;font-size:12px}.legal-checks{display:grid;gap:7px}.legal-check{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:9px 10px;border:1px solid var(--line);border-radius:7px}.legal-check strong{display:block;font-size:12px}.legal-check .detail{font-size:11px;color:var(--muted);margin-top:2px}.legal-status{white-space:nowrap;padding:4px 7px;border-radius:6px;font-size:11px;font-weight:800}.legal-status.pass{background:#e7f5ec;color:#23734d}.legal-status.fail{background:#ffefee;color:#b42318}.legal-status.review{background:#fff4dc;color:#9a5a00}.hidden{display:none!important}.info-btn{padding:4px 7px;font-size:12px;border-radius:50%;min-width:27px;color:var(--blue);border:1px solid #b9cddd;background:#f4f8fb;cursor:pointer}.modal-backdrop{position:fixed;inset:0;background:#10223599;display:flex;align-items:center;justify-content:center;padding:18px;z-index:1000}.modal{background:white;border-radius:13px;max-width:570px;width:100%;max-height:85vh;overflow:auto;padding:22px;box-shadow:0 18px 60px #0003}.modal h2{margin:0 36px 12px 0;color:var(--navy);font-size:19px}.modal p{margin:8px 0}.modal .modal-close{float:right;border:0;background:#edf2f6;border-radius:7px;padding:7px 10px;cursor:pointer;font-size:17px}.modal .source-note{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-top:14px}@media(max-width:900px){.layout{grid-template-columns:1fr}.summary{grid-template-columns:1fr}.time-row{grid-template-columns:110px 1fr 80px}}@media(max-width:540px){.top{align-items:flex-start;flex-direction:column}.top h1{font-size:20px}.row{grid-template-columns:1fr}.panel{padding:13px}.time-row{grid-template-columns:1fr 70px}.time-name{grid-column:1/-1}}
-</style>
+:root{--navy:#20364f;--blue:#31658e;--teal:#287d78;--bg:#f3f5f8;--white:#fff;--text:#263445;--muted:#687789;--line:#dce3eb;--red:#b42318;--amber:#9a5a00;--green:#23734d;--pale:#edf3f8;--surface:#ffffff;--shadow:0 8px 28px rgba(32,54,79,.07)}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#eef3f7 0,#f6f8fa 240px);color:var(--text);font:14px/1.5 "Segoe UI",Arial,sans-serif}.top{background:linear-gradient(115deg,#20364f,#2d5676);color:white;padding:22px max(18px,calc((100vw - 1250px)/2));display:flex;justify-content:space-between;align-items:center;gap:16px}.top h1{margin:0;font-size:23px}.top p{margin:4px 0 0;color:#dce7f1}.mark{display:flex;gap:13px;align-items:center}.logo{background:white;color:var(--navy);width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:20px;font-weight:800}.top button{background:#fff;color:var(--navy);border:0;border-radius:8px;padding:10px 14px;font-weight:700}main{max-width:1380px;margin:24px auto;padding:0 20px}.callout{border:1px solid #e8d49a;background:#fff8e5;padding:12px 14px;border-radius:10px;margin-bottom:16px}.layout{display:grid;grid-template-columns:minmax(300px,340px) minmax(0,1fr);gap:18px;align-items:start}.panel{background:var(--surface);border:1px solid #dbe4ec;border-radius:15px;padding:20px;margin-bottom:18px;box-shadow:var(--shadow)}.panel h2{font-size:16px;color:var(--navy);margin:0 0 14px;letter-spacing:-.01em}.field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}.field label{font-size:12px;font-weight:700;color:#506075}.field input,.field select,.field textarea{width:100%;padding:10px 11px;border:1px solid #cbd5df;border-radius:9px;background:white;font:inherit;color:var(--text);transition:border-color .15s,box-shadow .15s}.field input:focus,.field select:focus,.field textarea:focus,td input:focus{outline:none;border-color:#4e88b4;box-shadow:0 0 0 3px #dcecf7}.field textarea{min-height:60px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btns{display:flex;flex-wrap:wrap;gap:8px}.btn{padding:10px 13px;border:1px solid var(--line);border-radius:9px;background:white;color:var(--text);cursor:pointer;transition:transform .12s,box-shadow .12s,border-color .12s}.btn:hover{border-color:#9fb6c9;box-shadow:0 3px 10px #20364f12}.btn:active{transform:translateY(1px)}.btn.primary{background:var(--navy);border-color:var(--navy);color:white;font-weight:700}.btn.alt{background:#edf3f8}.btn.danger{color:var(--red)}.small{font-size:12px;color:var(--muted)}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:9px}table{width:100%;border-collapse:collapse;min-width:640px}th{text-align:left;background:#edf2f6;color:#4c5e72;text-transform:uppercase;font-size:11px;letter-spacing:.04em;padding:10px}td{padding:10px;border-top:1px solid #e8edf2;vertical-align:middle}tbody tr:not(.group-row):hover td{background:#f8fbfd}td input,td select{padding:6px;border:1px solid #cbd5df;border-radius:6px;width:100%;min-width:70px}td input[type=number]{width:75px}.phase{font-weight:700;color:var(--navy)}.date{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:650}.pill{display:inline-block;padding:3px 7px;border-radius:20px;font-size:11px;font-weight:700}.pill.red{background:#ffefee;color:var(--red)}.pill.amber{background:#fff4dc;color:var(--amber)}.pill.green{background:#e7f5ec;color:var(--green)}.date-alert{display:inline-block;margin-top:4px;padding:3px 6px;border-radius:5px;background:#fff0e6;color:#9a3412;font-size:11px;font-weight:700}.date-alert.holiday{background:#ffefee;color:var(--red)}.group-row td{background:linear-gradient(90deg,#287d78,#368c86);color:white;font-weight:750;padding:10px 12px}.group-row button{background:#fff;color:#20364f;border:0;border-radius:6px;padding:4px 8px;margin-left:6px;cursor:pointer;font-weight:650}.milestone-row.collapsed{display:none}.group-date{float:right;font-size:12px;font-weight:600;color:#e8f4f7}.alerts-panel{margin-top:12px;padding:11px 13px;border:1px solid #f0c9a8;background:#fff8f1;border-radius:9px}.alerts-panel h3{font-size:13px;margin:0 0 7px;color:#9a3412}.alerts-panel ul{margin:5px 0 0;padding-left:18px}.alerts-panel li{margin:4px 0}.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:14px}.stat{background:linear-gradient(180deg,#fbfcfd,#f4f7fa);border:1px solid var(--line);border-radius:11px;padding:13px}.stat span{display:block;font-size:11px;color:var(--muted)}.stat strong{display:block;color:var(--navy);font-size:19px;margin-top:4px;line-height:1.25;overflow-wrap:anywhere}.stat-status strong{font-size:15px}.timeline{margin-top:14px;display:flex;flex-direction:column;gap:9px}.time-row{display:grid;grid-template-columns:175px 1fr 150px;gap:10px;align-items:center}.phase-time-row{margin:3px 0}.phase-time-row .time-name{font-size:12px;white-space:nowrap}.phase-time-row .bar-bg{height:12px}.phase-time-row .time-date{font-size:11px;white-space:nowrap}.time-name{font-size:12px;font-weight:650}.bar-bg{height:18px;background:#edf1f5;border-radius:5px;overflow:hidden;position:relative}.bar{height:100%;background:#5e91b8;border-radius:5px;min-width:2px}.bar.last{background:var(--teal)}.time-date{font-size:11px;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}.warning{color:var(--red);font-weight:700}.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin:10px 0}.dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;background:#5e91b8}.dot.teal{background:var(--teal)}.empty{text-align:center;color:var(--muted);padding:24px}.footer{color:var(--muted);font-size:11px;text-align:center;padding:12px}.view-tabs{display:flex;gap:8px;margin:0 0 14px}.view-tab{padding:9px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--navy);font-weight:700;cursor:pointer}.view-tab.active{background:var(--navy);color:white}.vacation-comparison{min-width:760px!important;width:100%;border-collapse:collapse}.vacation-comparison th{background:#2b9eb5;color:white;text-transform:none;letter-spacing:0;font-size:12px;padding:7px;text-align:left}.vacation-comparison td{border:1px solid #222;padding:5px 7px;font-size:12px;color:#1f2937}.vacation-wide{overflow-x:auto;border:1px solid #d5dde5;border-radius:6px}.vacation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.vacation-region{border:1px solid var(--line);border-radius:9px;overflow:hidden}.vacation-region h3{background:#287d78;color:#fff;margin:0;padding:9px;font-size:14px}.vacation-region table{min-width:0;width:100%}.vacation-region th,.vacation-region td{padding:7px;font-size:12px}.legal-checks{display:grid;gap:7px}.legal-check{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 13px;border:1px solid var(--line);border-radius:10px;background:#fff}.legal-check:hover{border-color:#b9cbd9}.legal-check strong{display:block;font-size:12px}.legal-check .detail{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.45}.legal-status{white-space:nowrap;padding:6px 9px;border-radius:7px;font-size:11px;font-weight:800;letter-spacing:.01em}.legal-status.pass{background:#e7f5ec;color:#23734d}.legal-status.fail{background:#ffefee;color:#b42318}.legal-status.review{background:#fff4dc;color:#9a5a00}.hidden{display:none!important}.info-btn{padding:4px 7px;font-size:12px;border-radius:50%;min-width:27px;color:var(--blue);border:1px solid #b9cddd;background:#f4f8fb;cursor:pointer}.modal-backdrop{position:fixed;inset:0;background:#10223599;display:flex;align-items:center;justify-content:center;padding:18px;z-index:1000}.modal{background:white;border-radius:13px;max-width:570px;width:100%;max-height:85vh;overflow:auto;padding:22px;box-shadow:0 18px 60px #0003}.modal h2{margin:0 36px 12px 0;color:var(--navy);font-size:19px}.modal p{margin:8px 0}.modal .modal-close{float:right;border:0;background:#edf2f6;border-radius:7px;padding:7px 10px;cursor:pointer;font-size:17px}.modal .source-note{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-top:14px}@media(max-width:900px){.layout{grid-template-columns:1fr}.summary{grid-template-columns:repeat(2,minmax(0,1fr))}.time-row{grid-template-columns:110px 1fr 80px}}@media(max-width:540px){.top{align-items:flex-start;flex-direction:column}.top h1{font-size:20px}.row{grid-template-columns:1fr}.panel{padding:13px}.time-row{grid-template-columns:1fr 70px}.time-name{grid-column:1/-1}}
+.terms-tablewrap{overflow:auto;border:1px solid #d7e1e9;border-radius:12px}.terms-table{min-width:1120px;border-collapse:separate;border-spacing:0}.terms-table thead th{background:#20364f;color:#fff;text-transform:none;letter-spacing:0;font-size:12px;line-height:1.35;vertical-align:bottom}.terms-table tbody th{min-width:190px;background:#eef4f8;color:#20364f;text-transform:none;letter-spacing:0;font-size:12px;line-height:1.4;vertical-align:top}.terms-table td{min-width:145px;font-size:12px;line-height:1.5;vertical-align:top}.terms-table tbody tr:nth-child(even) td{background:#f8fafc}.terms-table tbody tr:hover td{background:#edf7f6}.terms-note{margin-top:16px;padding:16px 18px;border:1px solid #b9d8d5;background:#f0f8f7;border-radius:12px;color:#294b4a}.terms-note strong{color:#205d58}.terms-note p{margin:6px 0 0}.terms-table td,.terms-table th{white-space:normal}@media(max-width:700px){.terms-note{padding:13px}}</style>
 </head>
 <body>
 <header class="top"><div class="mark"><div class="logo">↶</div><div><h1>Aanbestedingsplanner</h1><p>Reken terug vanaf de gewenste contractstart óf publicatiedatum.</p></div></div><button id="export">Planning exporteren (.csv)</button></header>
 <main>
 <div class="callout"><strong>Let op bij termijnen:</strong> de kolom geeft de <em>tijd tussen acties/mijlpalen</em> weer, niet hoelang een bijeenkomst duurt. Een kick-off is een actiemoment (circa 1,5 uur op één dag); plan daarna bijvoorbeeld circa 2 weken tot “Concept aanbestedingsstukken versie 1 aanleveren bij projectgroep”.<br><strong>Werkwijze:</strong> vul de gewenste contractstart in. De tool rekent vanaf die datum terug via de ingestelde fasen en doorlooptijden. Pas de termijn tussen opeenvolgende acties aan op de opdracht. De invoer geeft de tussenliggende doorlooptijd weer, niet de duur van een bijeenkomst of overleg. De termijnen zijn standaard planningsaannames, geen juridisch oordeel; controleer wettelijke minimumtermijnen altijd aan de hand van de actuele Aanbestedingswet en PIANOo.</div>
-<div class="view-tabs" role="tablist" aria-label="Plannerweergave"><button type="button" class="view-tab active" id="tabPlanning" role="tab" aria-selected="true">Terugplanning</button><button type="button" class="view-tab" id="tabVacations" role="tab" aria-selected="false">Vakanties per regio</button></div>
+<div class="view-tabs" role="tablist" aria-label="Plannerweergave"><button type="button" class="view-tab active" id="tabPlanning" role="tab" aria-selected="true">Terugplanning</button><button type="button" class="view-tab" id="tabTerms" role="tab" aria-selected="false">Termijnen</button><button type="button" class="view-tab" id="tabVacations" role="tab" aria-selected="false">Vakanties per regio</button></div>
+<section id="termsPanel" class="panel hidden" role="tabpanel" aria-labelledby="tabTerms">
+<h2>Termijnen per aanbestedingsprocedure</h2>
+<p class="small">Onderstaand overzicht is overgenomen uit het aangeleverde DATA-overzicht. De inhoud is niet aangepast. Gebruik deze termijnen als uitgangspunt voor de planning; controleer waar nodig de toepasselijke wettelijke regels.</p>
+<div class="tablewrap terms-tablewrap"><table class="terms-table"><thead><tr><th>Soort procedure</th><th>Termijn 1e NvI</th><th>Termijn publicatie 1e NvI</th><th>Richtlijn 2e NvI</th><th>Richtlijn publicatie 2e NvI</th><th>Sluitingsdatum</th><th>Bezwaartermijn</th><th>Minimale doorlooptijd procedure</th></tr></thead><tbody>
+<tr><th scope="row">Europese Niet-Openbare Procedure</th><td>Ongeveer 2 weken na publicatie</td><td>Ongeveer 5 werkdagen na ontvangst</td><td>Ongeveer 5 werkdagen na NvI 1</td><td>Ongeveer 5 werkdagen na ontvangst</td><td>Minimaal 10 dagen na laatste NvI</td><td>Minimaal 10 dagen na voorlopige selectiebeslissing (richtlijn), minimaal 20 dagen na voorlopige gunning (Alcatel, opschortende termijn)</td><td>30 dagen tot verzoek deelname, min 40 dagen tot inschrijving</td></tr>
+<tr><th scope="row">Europese Openbare Procedure</th><td>Ongeveer 2 weken na publicatie</td><td>Ongeveer 5 werkdagen na ontvangst</td><td>Ongeveer 5 werkdagen na NvI 1</td><td>Ongeveer 5 werkdagen na ontvangst</td><td>Minimaal 10 dagen na laatste NvI</td><td>Minimaal 20 dagen na voorlopige gunning (Alcatel, opschortende termijn)</td><td>40</td></tr>
+<tr><th scope="row">Nationale Openbare Procedure</th><td>Ongeveer 2 weken na publicatie</td><td>Ongeveer 5 werkdagen na ontvangst</td><td>Ongeveer 5 werkdagen na NvI 1</td><td>Ongeveer 5 werkdagen na ontvangst</td><td>Minimaal 6 dagen na laatste NvI</td><td>Richtlijn: ca. 20 dagen na voorlopige gunning</td><td>29 (richtlijn)</td></tr>
+<tr><th scope="row">Meervoudig Onderhandse Procedure</th><td>Ongeveer 1,5 week na publicatie</td><td>Ongeveer 3 werkdagen na ontvangst</td><td>Ongeveer 3 werkdagen na NvI 1</td><td>Ongeveer 3 werkdagen na ontvangst</td><td>Minimaal 6 dagen na laatste NvI</td><td>Richtlijn: ca. 10 dagen na voorlopige gunning</td><td>19 (richtlijn)</td></tr>
+</tbody></table></div>
+<div class="terms-note"><strong>Uitgangspunt Europese openbare procedure</strong><p>Voor de terugplanning wordt uitgegaan van 40 kalenderdagen tussen publicatie en de deadline voor inschrijvingen. Plan gemiddeld circa één week per Nota van Inlichtingen en houd minimaal 10 kalenderdagen aan tussen de laatste Nota van Inlichtingen en de deadline voor inschrijving.</p></div>
+</section>
 <section id="vacationPanel" class="panel hidden" role="tabpanel"><h2>Schoolvakanties en belangrijke vrije dagen per regio</h2><p class="small">Overzicht in templatevorm: vakanties staan per rij en de drie regio’s naast elkaar. Herfst- en voorjaarsvakantie zijn adviesdata; controleer de schoolgids. Feestdagen zijn landelijke kalenderdata en betekenen niet automatisch dat iedereen vrij is.</p><div class="row"><div class="field"><label for="vacationYear">Schooljaar</label><select id="vacationYear"><option value="2026">2026–2027</option><option value="2027">2027–2028</option><option value="2028">2028–2029</option><option value="2029">2029–2030</option></select></div></div><div id="vacationTables"></div><p><a href="https://www.rijksoverheid.nl/onderwerpen/schoolvakanties" target="_blank" rel="noopener">Officiële informatie schoolvakanties – Rijksoverheid</a></p></section>
 <div class="layout">
 <aside>
 <section class="panel">
 <h2>1. Uitgangspunten</h2>
 <div class="field"><label for="name">Naam aanbesteding</label><input id="name" value="Voorbeeld aanbesteding"></div>
-<div class="field"><label for="procedure">Procedure</label><select id="procedure"><option value="nietopenbaar" selected>Europese niet-openbare procedure (met voorselectie)</option><option value="open">Europese openbare procedure</option><option value="nationaal">Nationale procedure</option><option value="meervoudig">Meervoudig onderhandse procedure</option></select></div>
+<div class="field"><label for="procedure">Procedure</label><select id="procedure"><option value="open" selected>Europese openbare procedure</option><option value="nietopenbaar">Europese niet-openbare procedure (met voorselectie)</option><option value="nationaal">Nationale procedure</option><option value="meervoudig">Meervoudig onderhandse procedure</option></select></div>
 <div class="field"><label for="planMode">Uitgangspunt terugplanning</label><select id="planMode"><option value="contract">Gewenste contractstart</option><option value="publication">Gewenste publicatiedatum</option></select></div>
 <div class="field" id="contractField"><label for="contract">Gewenste contractstart</label><input type="date" id="contract" value="2027-09-01"></div>
 <div class="field hidden" id="publicationField"><label for="publication">Gewenste publicatiedatum</label><input type="date" id="publication" value="2027-01-15"></div>
-<div class="field"><label><input type="checkbox" id="useHolidays" style="width:auto"> Schoolvakanties meenemen als niet-beschikbare dagen</label></div>
-<div class="row"><div class="field"><label for="region">Vakantieregio</label><select id="region"><option value="midden">Midden</option><option value="noord">Noord</option><option value="zuid">Zuid</option></select></div><div class="field"><label for="calendar">Datumtype</label><select id="calendar"><option value="calendar">Kalenderdagen</option><option value="working" selected>Werkdagen</option></select></div></div>
+<div class="field"><label><input type="checkbox" id="useHolidays" style="width:auto" checked> Schoolvakanties regio Noord vermijden bij de planning</label></div>
+<div class="row"><div class="field"><label for="region">Vakantieregio</label><select id="region"><option value="noord" selected>Noord</option><option value="midden">Midden</option><option value="zuid">Zuid</option></select></div><div class="field"><label for="calendar">Datumtype</label><select id="calendar"><option value="calendar" selected>Kalenderdagen</option><option value="working">Werkdagen (niet gebruikt voor berekening)</option></select></div></div>
 <div class="field"><label for="extra">Extra niet-beschikbare dagen (dd-mm-jjjj, één per regel)</label><textarea id="extra" placeholder="Bijv. 24-12-2026"></textarea></div>
-<div class="btns"><button type="button" class="btn primary" id="calculate">Bereken terug</button><button type="button" class="btn" id="reset">Herstel voorbeeld</button></div>
-<p class="small">Vakanties zijn optioneel. Bij inschakeling worden de in de app opgenomen Rijksoverheid-data gebruikt als planningssignaal; controleer de schoolkalender. Alleen bij rekenen in werkdagen verschuiven vakantiedagen de berekening.</p>
+<p class="small">Tip: kies eerst de procedure en het terugplanningsuitgangspunt. Pas daarna de mijlpaaltermijnen aan en bereken opnieuw.</p><div class="btns"><button type="button" class="btn primary" id="calculate">Bereken terug</button><button type="button" class="btn" id="reset">Herstel voorbeeld</button></div>
+<p class="small">Schoolvakanties regio Noord worden standaard vermeden bij het plannen. Eindmomenten op weekend-, feestdag- of vakantiedagen worden automatisch verschoven; controleer daarna altijd of de proceduretermijnen nog kloppen.</p>
 </section>
 <section class="panel">
 <h2>2. Fasen en doorlooptijden</h2>
@@ -39,11 +50,11 @@
 <div>
 <section class="panel">
 <h2>3. Terugberekende planning</h2>
-<div class="summary"><div class="stat"><span>Start voorbereiding</span><strong id="startDate">—</strong></div><div class="stat"><span>Publicatiedatum</span><strong id="procDate">—</strong></div><div class="stat"><span>Contractstart / eindpunt</span><strong id="contractDate">—</strong></div></div>
+<div class="summary"><div class="stat"><span>Start voorbereiding</span><strong id="startDate">—</strong></div><div class="stat"><span>Publicatiedatum</span><strong id="procDate">—</strong></div><div class="stat"><span>Contractstart / eindpunt</span><strong id="contractDate">—</strong></div><div class="stat stat-status"><span>Termijncontrole</span><strong id="overallStatus">Nog niet berekend</strong></div></div>
 <div id="resultMessage" class="small">Vul de uitgangspunten in en klik op ‘Bereken terug’.</div><div id="dateAlerts" class="alerts-panel hidden" aria-live="polite"></div>
-<div class="tablewrap" style="margin-top:14px"><table><thead><tr><th>Fase / mijlpaal</th><th>Termijn tot volgende actie (dagen)</th><th>Startdatum</th><th>Einddatum</th><th>Opmerking</th><th></th></tr></thead><tbody id="phaseRows"></tbody></table></div>
+<div class="tablewrap" style="margin-top:14px"><table><thead><tr><th>Fase / mijlpaal</th><th>Termijn (dagen)</th><th>Datum (eindmoment)</th><th>Opmerking</th><th></th></tr></thead><tbody id="phaseRows"></tbody></table></div>
 <section class="panel" id="legalCheckPanel">
-<h2>Controle wettelijke en proceduretermijnen</h2>
+<h2>4. Controle wettelijke en proceduretermijnen</h2>
 <p class="small">De controle vergelijkt de geplande datums met de termijnen uit het DATA-tabblad. Bij een termijn die als periode is ingevoerd, wordt de volledige periode van startdatum tot einddatum beoordeeld. Een invoer in werkdagen wordt niet één-op-één als kalenderdagen geïnterpreteerd. Een richtlijn of interne planningsafspraak wordt apart gemarkeerd. De uitkomst is een signalering, geen juridisch oordeel.</p>
 <div id="legalChecks" class="legal-checks" aria-live="polite"><p class="small">Bereken de planning om de termijnen te controleren.</p></div>
 <p class="small">Bronnen: <a href="https://www.pianoo.nl/nl/inkoopproces/fase-2-doorlopen/aankondigen/termijnen-bij-openbare-procedures-zonder-voorselectie" target="_blank" rel="noopener">PIANOo – openbare procedures</a> · <a href="https://www.pianoo.nl/nl/inkoopproces/fase-2-doorlopen/aankondigen/termijnen-bij-procedures-met-voorselectie" target="_blank" rel="noopener">PIANOo – procedures met voorselectie</a> · <a href="https://www.pianoo.nl/nl/inkoopproces/fase-2-doorlopen-aanbestedingsprocedure/gunnen/rechtsbescherming" target="_blank" rel="noopener">PIANOo – opschortende termijn</a>.</p>
@@ -52,7 +63,7 @@
 <div id="timeline" class="timeline"></div>
 </section>
 <section class="panel">
-<h2>4. Controle en bronnen</h2>
+<h2>5. Controle en bronnen</h2>
 <p>De berekening is een terugwaartse planningshulp. De app maakt onderscheid tussen de interne voorbereiding en de formele aanbestedingsfase, maar controleert niet zelfstandig of een wettelijke termijn juridisch toelaatbaar is voor de concrete aanbesteding.</p>
 <ul>
 <li><a href="https://www.pianoo.nl/nl/inkoopproces/fase-1-voorbereiden/kiezen-aanbestedingsprocedure" target="_blank" rel="noopener">PIANOo – Kiezen aanbestedingsprocedure</a></li>
@@ -130,9 +141,10 @@ let phases=[];
 function defaults(type){
  const G1="Fase 1 - Inventarisatie",G2="Fase 2 - Voorbereiding",G3="Fase 3 - Selectiefase",G4="Fase 4 - Analyse & Besluitvorming",G5="Fase 5 - Gunningsfase",G6="Fase 6 - Analyse & Besluitvorming";
  if(["nietopenbaar","dialoog","onderhandeling"].includes(type)) return [
- {name:"Invullen Projectsheet & opstellen beslisnota",group:"Fase 1 - Opdrachtformulering",days:10,note:"Voorbereiden projectsheet en beslisnota."},
- {name:"Projectsheet & beslisnota ter accordering voorleggen",group:"Fase 1 - Opdrachtformulering",days:5,note:"Accordering organiseren."},
- {name:"GO / NO GO projectsheet & beslisnota",group:"Fase 1 - Opdrachtformulering",days:1,note:"Besluit over doorgaan."},
+ {name:"Inventarisatie uitvoeren en Projectsheet / beslisnota opstellen",group:"Fase 1 - Inventarisatie",days:10,note:"Inventarisatie uitvoeren en de Projectsheet en beslisnota voorbereiden."},
+ {name:"Projectsheet en beslisnota gereedmaken voor CvB",group:"Fase 1 - Inventarisatie",days:4,note:"Laatste afstemming en gereedmaken van de beslisnota voor aanlevering."},
+ {name:"Aanleveren beslisnota aan het CvB",group:"Fase 1 - Inventarisatie",days:5,note:"Reserveer één werkweek voor aanlevering en behandeling/doorloop richting CvB."},
+ {name:"GO / NO GO op basis van Projectsheet en beslisnota",group:"Fase 1 - Inventarisatie",days:1,note:"Besluit over doorgaan na behandeling van de beslisnota door het CvB."},
  {name:"Opstartbijeenkomst - Kick off aanbesteding",group:"Fase 2 - Voorbereiding",days:0,note:"Actiemoment op één datum; bijeenkomst duurt doorgaans circa 1,5 uur. De termijn tot de eerste conceptstukken staat bij de volgende mijlpaal."},
  {name:"Concept aanbestedingsstukken versie 1 aanleveren bij projectgroep",group:"Fase 2 - Voorbereiding",days:10,note:"Richttermijn: circa 2 weken na de kick-off. Dit is de doorlooptijd tot aanlevering, geen activiteitenduur."},
  {name:"Concept aanbestedingsdocumenten bespreken 1",group:"Fase 2 - Voorbereiding",days:3,note:"Bespreking conceptstukken."},
@@ -144,10 +156,10 @@ function defaults(type){
  {name:"Informerende mail publicatie",group:G3,days:1,note:"Interne communicatie."},
  {name:"Sluiting 1e schriftelijke vragenronde",group:G3,days:14,note:"Planningstermijn selectiefase."},
  {name:"Bespreken / Vaststellen antwoorden NvI 1",group:G3,days:5,note:"Antwoorden voorbereiden."},
- {name:"Publiceren 1e Nota van Inlichtingen",group:G3,days:5,note:"Publiceren na verwerking van vragen."},
+ {name:"Publiceren 1e Nota van Inlichtingen",group:G3,days:5,note:"Volgens tabblad Termijnen: publicatie circa 5 werkdagen na ontvangst bij Europese en nationale procedures; circa 3 werkdagen bij meervoudig onderhands."},
  {name:"Publiceren Aanvullende Nota",group:G3,days:3,note:"Indien nodig."},
  {name:"Instructie beoordelingscommissie",group:G3,days:1,note:"Instructie voor beoordeling van aanmeldingen."},
- {name:"Deadline indienen aanmeldingen",group:G3,days:30,note:"Termijn vanaf publicatie; controleer de wettelijke minimumtermijn."},
+ {name:"Deadline indienen aanmeldingen",group:G3,days:30,note:"Volgens tabblad Termijnen: bij de Europese niet-openbare procedure 30 dagen tot verzoek om deelname en als uitgangspunt minimaal 40 dagen tot inschrijving."},
  {name:"Openen en analyseren inschrijvingen",group:G4,days:2,note:"Openen en analyseren van aanmeldingen."},
  {name:"Aanleveren van te beoordelen selectiecriteria bij beoordelingscommissie",group:G4,days:5,note:"Interne beoordelingsstap."},
  {name:"Deadline aanleveren ingevulde scoreformulieren",group:G4,days:5,note:"Interne deadline."},
@@ -160,10 +172,10 @@ function defaults(type){
  {name:"Dialoogronde (online)",group:G5,days:5,note:"Pas aan of verwijder als niet van toepassing."},
  {name:"Sluiting 1e schriftelijke vragenronde",group:G5,days:14,note:"Planningstermijn gunningsfase."},
  {name:"Bespreken / Vaststellen antwoorden NvI 1",group:G5,days:5,note:"Antwoorden voorbereiden."},
- {name:"Publiceren 1e Nota van Inlichtingen",group:G5,days:5,note:"Publiceren na verwerking van vragen."},
+ {name:"Publiceren 1e Nota van Inlichtingen",group:G5,days:5,note:"Volgens tabblad Termijnen: publicatie circa 5 werkdagen na ontvangst bij Europese en nationale procedures; circa 3 werkdagen bij meervoudig onderhands."},
  {name:"Aanvullende Nota van Inlichtingen (optioneel)",group:G5,days:3,note:"Optioneel."},
  {name:"Instructie beoordelingscommissie",group:G5,days:1,note:"Instructie beoordelingscommissie."},
- {name:"Deadline indienen inschrijvingen",group:G5,days:30,note:"Termijn vanaf uitnodiging; controleer wettelijke minimumtermijn."},
+ {name:"Deadline indienen inschrijvingen",group:G5,days:30,note:"Volgens tabblad Termijnen: bij Europese openbare procedure minimaal 40 kalenderdagen tussen publicatie en inschrijfdeadline; daarnaast minimaal 10 kalenderdagen na de laatste NvI."},
  {name:"Openen en analyseren inschrijvingen",group:G6,days:2,note:"Openen en analyseren van inschrijvingen."},
  {name:"Aanleveren beoordelen schriftelijke 'open vragen' bij beoordelingscommissie",group:G6,days:5,note:"Interne beoordelingsstap."},
  {name:"Deadline aanleveren ingevulde scoreformulieren",group:G6,days:5,note:"Interne deadline."},
@@ -182,9 +194,10 @@ function defaults(type){
  {name:"Start Overeenkomst",group:"Fase 7 - Contracteren",days:1,note:"Gewenste ingangsdatum."}
  ];
  const p=[
- {name:"Invullen Projectsheet & opstellen beslisnota",group:G1,days:10,note:"Voorbereiden projectsheet en beslisnota."},
- {name:"Projectsheet & beslisnota ter accordering voorleggen",group:G1,days:5,note:"Accordering organiseren."},
- {name:"GO / NO GO projectsheet & beslisnota",group:G1,days:1,note:"Besluit over doorgaan."},
+ {name:"Inventarisatie uitvoeren en Projectsheet / beslisnota opstellen",group:G1,days:10,note:"Inventarisatie uitvoeren en de Projectsheet en beslisnota voorbereiden."},
+ {name:"Projectsheet en beslisnota gereedmaken voor CvB",group:G1,days:4,note:"Laatste afstemming en gereedmaken van de beslisnota voor aanlevering."},
+ {name:"Aanleveren beslisnota aan het CvB",group:G1,days:5,note:"Reserveer één werkweek voor aanlevering en behandeling/doorloop richting CvB."},
+ {name:"GO / NO GO op basis van Projectsheet en beslisnota",group:G1,days:1,note:"Besluit over doorgaan na behandeling van de beslisnota door het CvB."},
  {name:"Opstartbijeenkomst - Kick off aanbesteding",group:G2,days:2,note:"Kick-off en afspraken."},
  {name:"Concept aanbestedingsstukken versie 1 aanleveren bij projectgroep",group:G2,days:15,note:"Eerste concept aanbestedingsstukken."},
  {name:"Concept aanbestedingsdocumenten bespreken 1",group:G2,days:3,note:"Bespreking conceptstukken."},
@@ -192,14 +205,14 @@ function defaults(type){
  {name:"Concept aanbestedingsdocumenten bespreken 2",group:G2,days:3,note:"Tweede bespreking conceptstukken."},
  {name:"Optioneel: Afstemming MR-en / OR",group:G2,days:10,note:"Optionele mijlpaal; pas de duur aan indien van toepassing."},
  {name:"Aanbestedingsdocumenten definitief maken",group:G2,days:5,note:"Documenten finaliseren vóór publicatie."},
- {name:"Publicatie aanbesteding",group:G3,days:1,note:"Publicatiedatum. De wettelijke minimumtermijn hangt af van procedure en opdracht."},
- {name:"Schouw op locatie",group:G3,days:1,note:"Optionele activiteit; voeg zo nodig extra tijd toe."},
- {name:"Sluiting 1e schriftelijke vragenronde",group:G3,days:type==="meervoudig"?11:14,note:"DATA: circa 1,5 week bij meervoudig onderhands; circa 2 weken bij Europees en nationaal openbaar."},
- {name:"Bespreken / Vaststellen antwoorden NvI 1",group:G3,days:3,note:"DATA: circa 3 werkdagen bij meervoudig onderhands; circa 5 werkdagen bij Europees en nationaal openbaar na ontvangst."},
- {name:"Publiceren 1e Nota van Inlichtingen",group:G3,days:type==="meervoudig"?3:5,note:"DATA: circa 3 of 5 werkdagen na ontvangst."},
- {name:"Sluiting 2e schriftelijke vragenronde",group:G3,days:5,note:"Planningstermijn; afstemmen op de gekozen procedure en gepubliceerde stukken."},
- {name:"Bespreken / Vaststellen antwoorden NvI 2",group:G3,days:type==="meervoudig"?3:5,note:"DATA: circa 3 of 5 werkdagen na NvI 1."},
- {name:"Publiceren 2e Nota van Inlichtingen",group:G3,days:type==="meervoudig"?3:5,note:"DATA: circa 3 of 5 werkdagen na ontvangst."},
+ {name:"Publicatie aanbesteding",group:G3,days:1,note:"Startpunt voor de proceduretermijn. Hanteer de uitgangspunten uit tabblad Termijnen."},
+ {name:"Schouw op locatie",group:G3,days:type==="open"?1:1,note:"Optionele activiteit; voeg zo nodig extra tijd toe."},
+ {name:"Sluiting 1e schriftelijke vragenronde",group:G3,days:type==="meervoudig"?11:(type==="open"?11:14),note:"Termijn volgens tabblad Termijnen: circa 2 weken na publicatie bij Europese procedures en nationale openbare procedure; circa 1,5 week bij meervoudig onderhands."},
+ {name:"Bespreken / Vaststellen antwoorden NvI 1",group:G3,days:type==="open"?4:3,note:"DATA: circa 3 werkdagen bij meervoudig onderhands; circa 5 werkdagen bij Europees en nationaal openbaar na ontvangst. Voor Europese openbare procedure: planning circa één week per NvI."},
+ {name:"Publiceren 1e Nota van Inlichtingen",group:G3,days:type==="meervoudig"?3:(type==="open"?4:5),note:"Volgens tabblad Termijnen: circa 5 werkdagen na ontvangst bij Europese en nationale procedures; circa 3 werkdagen bij meervoudig onderhands."},
+ {name:"Sluiting 2e schriftelijke vragenronde",group:G3,days:type==="open"?3:5,note:"Planningstermijn; afstemmen op de gekozen procedure en gepubliceerde stukken."},
+ {name:"Bespreken / Vaststellen antwoorden NvI 2",group:G3,days:type==="meervoudig"?3:(type==="open"?4:5),note:"Volgens tabblad Termijnen: circa 5 werkdagen na NvI 1 bij Europese en nationale procedures; circa 3 werkdagen bij meervoudig onderhands."},
+ {name:"Publiceren 2e Nota van Inlichtingen",group:G3,days:type==="meervoudig"?3:(type==="open"?1:5),note:"Volgens tabblad Termijnen: circa 5 werkdagen na ontvangst bij Europese en nationale procedures; circa 3 werkdagen bij meervoudig onderhands."},
  {name:"Instructie beoordelingscommissie",group:G3,days:1,note:"Interne voorbereiding beoordelingscommissie."},
  {name:"Deadline indienen inschrijvingen",group:G3,days:type==="open"?10:(type==="nationaal"||type==="meervoudig"?6:10),note:"DATA: minimaal 10 dagen na laatste NvI bij Europees openbaar en minimaal 6 dagen bij nationaal openbaar en meervoudig onderhands. Juridisch toetsen."},
  {name:"Openen en analyseren inschrijvingen",group:G4,days:2,note:"Openen en eerste analyse."},
@@ -229,12 +242,12 @@ function activityDurationLabel(p){
  return "Tussenliggende termijn";
 }
 function durationHeader(p){
- return activityDurationLabel(p)==="Actiemoment" ? "Termijn tot volgende actie (dagen)" : "Termijn tot volgende actie (dagen)";
+ return activityDurationLabel(p)==="Actiemoment" ? "Doorlooptijd (kalenderdagen)" : "Doorlooptijd (kalenderdagen)";
 }
 
 function extra(){return $("extra").value.split(/\r?\n/).map(s=>{let m=s.trim().match(/^(\d{2})-(\d{2})-(\d{4})$/);return m?`${m[3]}-${m[2]}-${m[1]}`:null}).filter(Boolean)}
 function unavailable(s){let dow=new Date(s+"T12:00:00").getDay();if(dow===0||dow===6)return true;if(extra().includes(s))return true;let reg=$("region").value;return $("useHolidays").checked && (holidayData[reg]||[]).some(x=>s>=x[0]&&s<=x[1])}
-function shift(s,n){if($("calendar").value!=="working")return plus(s,n);let d=s,step=n>=0?1:-1,count=0;while(count!==n){d=plus(d,step);if(!unavailable(d))count+=step}return d}
+function shift(s,n){return plus(s,n)}
 function previous(s){return shift(s,-1)}
 
 function calendarDaysBetween(a,b){
@@ -252,61 +265,76 @@ function findDate(rows,pattern,which="start"){
  return r?.[which]||null;
 }
 function findDateAfter(rows,pattern,afterDate,which="start"){
- const matches=rows.filter(p=>pattern.test(p.name||"") && p[which]);
+ const matches=rows.filter(p=>pattern.test(p.name||"") && p[which]).sort((a,b)=>a[which].localeCompare(b[which]));
  if(!afterDate)return matches[0]?.[which]||null;
  const later=matches.find(p=>p[which]>=afterDate);
  return later?.[which]||null;
 }
+function dateLabel(iso){
+ if(!iso)return "datum ontbreekt";
+ const d=new Date(iso+"T12:00:00");
+ return d.toLocaleDateString("nl-NL",{day:"2-digit",month:"2-digit",year:"numeric"});
+}
 function renderLegalChecks(rows){
  const type=$("procedure").value;
- const nonopen=["nietopenbaar","dialoog","onderhandeling"].includes(type);
- const isEU=["open","nietopenbaar","dialoog","onderhandeling"].includes(type);
+ const nonopen=type==="nietopenbaar";
+ const isEU=["open","nietopenbaar"].includes(type);
  const isNational=type==="nationaal", isMulti=type==="meervoudig";
  const checks=[];
- const add=(label,actual,min,unit,kind="minimum",note="")=>{
-  if(actual===null||actual===undefined){
-   checks.push({label,status:"review",detail:"Mijlpaal ontbreekt in de planning; voeg de stap toe of controleer handmatig.",note});return;
+ const add=(label,actual,min,unit,kind="minimum",note="",dates="")=>{
+  if(actual===null||actual===undefined||!Number.isFinite(actual)){
+   checks.push({label,status:"review",detail:"De benodigde mijlpaal of datum ontbreekt. Voeg de stap toe of controleer de termijn handmatig.",note});return;
   }
   const ok=actual>=min;
-  checks.push({label,status:kind==="richtlijn"?"review":ok?"pass":"fail",
-   detail:`Gepland: ${actual} ${unit}; ${kind==="richtlijn"?"richtlijn":"minimum"}: ${min} ${unit}.${note?" "+note:""}`});
+  const status=kind==="richtlijn"?"review":ok?"pass":"fail";
+  checks.push({label,status,detail:`Gepland: ${actual} ${unit}; ${kind==="richtlijn"?"richtlijn":"minimum"}: ${min} ${unit}.${dates?" Datums: "+dates+".":""}${note?" "+note:""}`});
  };
- const pub=findDate(rows,/^Publicatie aanbesteding$/i);
- const application=findDate(rows,/Deadline indienen aanmeldingen/i,"end");
+ const pub=findDate(rows,/^Publicatie aanbesteding$/i,"end");
+ const applicationRow=rows.find(p=>/Deadline indienen aanmeldingen/i.test(p.name||""));
+ const application=applicationRow?.end||applicationRow?.start||null;
  const invite=findDate(rows,/Verzenden uitnodiging tot inschrijving naar geselecteerde partijen/i,"start");
  const bidRow=rows.find(p=>/Deadline indienen inschrijvingen/i.test(p.name||""));
- // Deze rij representeert de periode van uitnodiging/publicatie tot de deadline.
  const bid=bidRow?.end||null;
- const bidStart=bidRow?.start||invite;
- const lastNvi=findDate(rows,/Publiceren (?:2e Nota van Inlichtingen|Aanvullende Nota van Inlichtingen|Aanvullende Nota)/i)||
-   findDate(rows,/Publiceren 1e Nota van Inlichtingen/i);
+ const bidStart=(type==="open"||type==="nationaal")?pub:(bidRow?.start||invite||pub);
+ const lastNvi=findDateAfter(rows,/Publiceren (?:2e Nota van Inlichtingen|Aanvullende Nota van Inlichtingen|Aanvullende Nota)/i,bidStart,"end")||
+   findDateAfter(rows,/Publiceren 1e Nota van Inlichtingen/i,bidStart,"end");
  const prelimSelect=findDate(rows,/Versturen selectiebeslissing/i,"start");
- const finalSelect=findDate(rows,/Definitieve selectie/i);
- const prelimAward=findDate(rows,/Versturen voorlopige gunning/i);
- const finalAward=findDate(rows,/Definitieve gunning/i);
+ const selectObjectionEnd=findDateAfter(rows,/Einddatum bezwaartermijn/i,prelimSelect,"end");
+ const prelimAward=findDate(rows,/Versturen voorlopige gunning/i,"start");
+ const awardObjectionEnd=findDateAfter(rows,/Einddatum bezwaartermijn/i,prelimAward,"end");
+ const finalAward=findDateAfter(rows,/Definitieve gunning/i,prelimAward,"start");
  if(nonopen){
-  add("Selectiefase: publicatie → deadline aanmeldingen",calendarDaysBetween(pub,application),30,"kalenderdagen","minimum","Europese niet-openbare procedure; verkorte procedure/uitzonderingen niet automatisch beoordeeld.");
-  add("Gunningsfase: uitnodiging → deadline inschrijvingen",calendarDaysBetween(bidStart||invite,bid),40,"kalenderdagen","minimum","De controle gebruikt begin- en einddatum van de termijnrij; toepasselijke verkortingsmogelijkheden juridisch controleren.");
-  add("Voorlopige selectiebeslissing → einddatum bezwaartermijn",calendarDaysBetween(prelimSelect,findDateAfter(rows,/Einddatum bezwaartermijn/i,prelimSelect)),10,"kalenderdagen","richtlijn","Volgens jouw template; niet aangemerkt als wettelijke minimumtermijn.");
+  add("Selectiefase: publicatie → deadline aanmeldingen",calendarDaysBetween(pub,application),30,"kalenderdagen","minimum","Europese niet-openbare procedure; verkorte procedure/uitzonderingen zijn niet automatisch beoordeeld.",dateLabel(pub)+" → "+dateLabel(application));
+  add("Gunningsfase: uitnodiging → deadline inschrijvingen",calendarDaysBetween(bidStart,bid),40,"kalenderdagen","minimum","Standaarduitgangspunt volgens jouw DATA-overzicht; toepasselijke verkortingsmogelijkheden juridisch controleren.",dateLabel(bidStart)+" → "+dateLabel(bid));
+  add("Voorlopige selectiebeslissing → einddatum bezwaartermijn",calendarDaysBetween(prelimSelect,selectObjectionEnd),10,"kalenderdagen","richtlijn","Volgens jouw template; dit is hier een planningsrichtlijn, geen algemeen wettelijk minimum.",dateLabel(prelimSelect)+" → "+dateLabel(selectObjectionEnd));
  } else if(type==="open"){
-  add("Publicatie → deadline inschrijvingen",calendarDaysBetween(bidRow?.start||pub,bid),40,"kalenderdagen","minimum","De controle gebruikt begin- en einddatum van de termijnrij; wettelijke termijn hangt onder meer af van aankondigingswijze en eventuele verkorting.");
+  add("Publicatie → deadline inschrijvingen",calendarDaysBetween(pub,bid),40,"kalenderdagen","minimum","Volgens jouw tabblad Termijnen: minimaal 40 kalenderdagen tussen publicatie en inschrijfdeadline.",dateLabel(pub)+" → "+dateLabel(bid));
  } else if(isNational){
-  add("Publicatie → deadline inschrijvingen",calendarDaysBetween(bidRow?.start||pub,bid),29,"kalenderdagen","richtlijn","De controle gebruikt begin- en einddatum van de termijnrij; nationale proceduretermijn is hier als richtlijn gemarkeerd.");
+  add("Publicatie → deadline inschrijvingen",calendarDaysBetween(bidStart,bid),29,"kalenderdagen","richtlijn","Volgens jouw DATA-overzicht; als richtlijn gemarkeerd, niet als algemeen wettelijk minimum.",dateLabel(bidStart)+" → "+dateLabel(bid));
  } else if(isMulti){
-  add("Offerteaanvraag → deadline inschrijvingen",calendarDaysBetween(bidRow?.start||findDate(rows,/Offerteaanvraag/i)||pub,bid),19,"kalenderdagen","richtlijn","De controle gebruikt begin- en einddatum van de termijnrij; geen wettelijke minimumtermijn voor alle meervoudig onderhandse opdrachten.");
+  add("Offerteaanvraag → deadline inschrijvingen",calendarDaysBetween(bidStart||findDate(rows,/Offerteaanvraag/i)||pub,bid),19,"kalenderdagen","richtlijn","Volgens jouw DATA-overzicht; geen algemeen wettelijk minimum voor alle meervoudig onderhandse opdrachten.",dateLabel(bidStart)+" → "+dateLabel(bid));
  }
  if(lastNvi&&bid){
-  const minNvi=(isEU?10:6);
-  add("Laatste Nota van Inlichtingen → deadline inschrijvingen",calendarDaysBetween(lastNvi,bid),minNvi,"kalenderdagen","minimum","Volgens jouw DATA-tabblad; controleer de toepasselijke regels en of de laatste NvI correct is herkend.");
+  const minNvi=isEU?10:6;
+  add("Laatste Nota van Inlichtingen → deadline inschrijvingen",calendarDaysBetween(lastNvi,bid),minNvi,"kalenderdagen","minimum","Volgens jouw DATA-tabblad; controleer of de herkende NvI de laatste relevante publicatie is.",dateLabel(lastNvi)+" → "+dateLabel(bid));
  }
  if(prelimAward){
-  const standstillMin=(isEU||isNational)?20:(isMulti?10:20);
-  add("Voorlopige gunning → einddatum bezwaartermijn",calendarDaysBetween(prelimAward,findDateAfter(rows,/Einddatum bezwaartermijn/i,prelimAward)),standstillMin,"kalenderdagen",isMulti?"richtlijn":"minimum",isMulti?"Volgens jouw DATA-tabblad.":"De 20 kalenderdagen is de gebruikelijke wettelijke opschortende termijn waar die van toepassing is.");
-  const standstillToAward=calendarDaysBetween(prelimAward,finalAward);
-  add("Voorlopige gunning → definitieve gunning",standstillToAward,standstillMin,"kalenderdagen",isMulti?"richtlijn":"minimum","Definitieve gunning hoort niet vóór afloop van de toepasselijke opschortende termijn plaats te vinden.");
+  const standstillMin=isEU?20:(isNational?20:10);
+  const kind=(isEU)?"minimum":"richtlijn";
+  add("Voorlopige gunning → einddatum bezwaartermijn",calendarDaysBetween(prelimAward,awardObjectionEnd),standstillMin,"kalenderdagen",kind,isEU?"Gebruikelijke opschortende termijn waar deze van toepassing is.":"Volgens jouw DATA-tabblad; behandel dit als richtlijn.",dateLabel(prelimAward)+" → "+dateLabel(awardObjectionEnd));
+  add("Voorlopige gunning → definitieve gunning",calendarDaysBetween(prelimAward,finalAward),standstillMin,"kalenderdagen",kind,"Controleer of de definitieve gunning niet vóór het einde van de toepasselijke opschortende termijn plaatsvindt.",dateLabel(prelimAward)+" → "+dateLabel(finalAward));
  }
  const el=$("legalChecks");
  el.innerHTML=checks.map(c=>`<div class="legal-check"><div><strong>${esc(c.label)}</strong><div class="detail">${esc(c.detail)}</div></div><span class="legal-status ${c.status}">${c.status==="pass"?"Voldoet":c.status==="fail"?"NIET VOLDAAN":"Controle nodig"}</span></div>`).join("");
+ const failed=checks.filter(c=>c.status==="fail").length;
+ const review=checks.filter(c=>c.status==="review").length;
+ const overall=$("overallStatus");
+ if(overall){
+  if(!checks.length)overall.textContent="Nog niet berekend";
+  else if(failed)overall.textContent=failed+" afwijking"+(failed===1?"":"en");
+  else if(review)overall.textContent="Handmatige controle";
+  else overall.textContent="Voldoet";
+ }
 }
 
 function calculate(){
@@ -324,6 +352,125 @@ function calculate(){
   rows[pubIndex]={...phases[pubIndex],start:pub,end:pubEnd};
   for(let i=pubIndex-1;i>=0;i--){let p=phases[i];let end=previous(rows[i+1].start);let start=shift(end,-Math.max(0,Number(p.days)||0));rows[i]={...p,start,end}}
   for(let i=pubIndex+1;i<phases.length;i++){let p=phases[i];let start=previous(rows[i-1].end);let end=shift(start,Math.max(0,Number(p.days)||0));rows[i]={...p,start,end}}
+ }
+ // Enforce the key intervals from the user's terms table as planning anchors.
+ const procType=$("procedure").value;
+ const publicationIndex=rows.findIndex(p=>/^Publicatie aanbesteding$/i.test(p.name||""));
+ const applicationIndex=rows.findIndex(p=>/Deadline indienen aanmeldingen/i.test(p.name||""));
+ const bidDeadlineIndex=rows.findIndex(p=>/Deadline indienen inschrijvingen/i.test(p.name||""));
+ const nviIndexes=rows.map((p,i)=>({p,i})).filter(x=>/Publiceren (?:2e Nota van Inlichtingen|Aanvullende Nota van Inlichtingen|Aanvullende Nota)/i.test(x.p.name||""));
+ const firstNviIndexes=rows.map((p,i)=>({p,i})).filter(x=>/Publiceren 1e Nota van Inlichtingen/i.test(x.p.name||""));
+ const finalNviItem=nviIndexes.length?nviIndexes[nviIndexes.length-1]:(firstNviIndexes.length?firstNviIndexes[firstNviIndexes.length-1]:null);
+ if(publicationIndex>=0){
+  const publicationDate=rows[publicationIndex].end;
+  if(procType==="open"&&bidDeadlineIndex>=0){
+   const deadline=plus(publicationDate,40);
+   rows[bidDeadlineIndex]={...rows[bidDeadlineIndex],start:plus(deadline,-1),end:deadline};
+   if(finalNviItem){
+    const nviDate=plus(deadline,-10);
+    rows[finalNviItem.i]={...rows[finalNviItem.i],start:plus(nviDate,-1),end:nviDate};
+   }
+  } else if(procType==="nietopenbaar"&&applicationIndex>=0){
+   const deadline=plus(publicationDate,30);
+   rows[applicationIndex]={...rows[applicationIndex],start:plus(deadline,-1),end:deadline};
+  } else if(procType==="nationaal"&&bidDeadlineIndex>=0){
+   const deadline=plus(publicationDate,29);
+   rows[bidDeadlineIndex]={...rows[bidDeadlineIndex],start:plus(deadline,-1),end:deadline};
+  } else if(procType==="meervoudig"&&bidDeadlineIndex>=0){
+   const deadline=plus(publicationDate,19);
+   rows[bidDeadlineIndex]={...rows[bidDeadlineIndex],start:plus(deadline,-1),end:deadline};
+  }
+ }
+ // Handmatig gekozen einddatums zijn ankers. Bij een duurwijziging blijft de einddatum van die activiteit het anker;
+ // eerdere activiteiten worden terugberekend. Latere mijlpalen blijven staan, tenzij zij zelf handmatig zijn aangepast.
+ for(let i=0;i<rows.length;i++){
+  if(phases[i]?.manualEnd){
+   const d=phases[i].manualEnd;
+   rows[i]={...rows[i],start:shift(d,-Math.max(0,Number(phases[i].days)||0)),end:d};
+   for(let j=i-1;j>=0;j--){
+    if(phases[j]?.manualEnd){const md=phases[j].manualEnd;rows[j]={...rows[j],start:shift(md,-Math.max(0,Number(phases[j].days)||0)),end:md};}
+    else {const end=previous(rows[j+1].start);const start=shift(end,-Math.max(0,Number(phases[j].days)||0));rows[j]={...rows[j],start,end};}
+   }
+  }
+ }
+ // Normaliseer alle start- én eindmomenten: geen datum in het weekend of op een officiële feestdag.
+ const isWeekendOrPublicHoliday = d => {
+  if(!d)return false;
+  const dow=new Date(d+"T12:00:00").getDay();
+  return dow===0||dow===6||!!publicHolidayName(d)||!!schoolHolidayName(d);
+ };
+ const nextWorkingEndDate = d => {let x=d;let guard=0;while(isWeekendOrPublicHoliday(x)&&guard++<20)x=plus(x,1);return x};
+ rows.forEach((p,i)=>{
+  let start=p.start||p.end, end=p.end||p.start;
+  if(start)start=nextWorkingEndDate(start);
+  if(end)end=nextWorkingEndDate(end);
+  // Bewaar de chronologische volgorde binnen een activiteit.
+  if(start&&end&&end<start)end=start;
+  rows[i]={...p,start,end};
+ });
+ // Hercontroleer proceduretermijnen NA het verschuiven van weekend-/feestdagen.
+ // De Europese openbare procedure gebruikt kalenderdagen: minimaal 40 dagen vanaf publicatie,
+ // met minimaal 10 kalenderdagen tussen de laatste NvI en de inschrijfdeadline.
+ if(procType==="open" && publicationIndex>=0 && bidDeadlineIndex>=0){
+  const pubDate=rows[publicationIndex].end;
+  let deadline=plus(pubDate,40);
+  deadline=nextWorkingEndDate(deadline);
+  rows[bidDeadlineIndex]={...rows[bidDeadlineIndex],start:deadline,end:deadline};
+  if(finalNviItem){
+   let nviDate=plus(deadline,-10);
+   // Publicatie van de laatste NvI mag niet in het weekend/feestdag vallen;
+   // bij een niet-werkdag schuift de NvI terug, zodat de termijn tot inschrijving minstens 10 dagen blijft.
+   let guard=0;
+   while(isWeekendOrPublicHoliday(nviDate)&&guard++<20)nviDate=plus(nviDate,-1);
+   rows[finalNviItem.i]={...rows[finalNviItem.i],start:nviDate,end:nviDate};
+  }
+ }
+ // Voor de overige procedures ook de toepasselijke termijn opnieuw toepassen na datumcorrecties.
+ if(publicationIndex>=0 && procType!=="open"){
+  const pubDate=rows[publicationIndex].end;
+  const idx=procType==="nietopenbaar"?applicationIndex:bidDeadlineIndex;
+  const days=procType==="nietopenbaar"?30:procType==="nationaal"?29:19;
+  if(idx>=0){
+   const deadline=nextWorkingEndDate(plus(pubDate,days));
+   rows[idx]={...rows[idx],start:deadline,end:deadline};
+  }
+ }
+ // CvB: beslisnota aanleveren op dinsdag; besluitvorming op de woensdag een week later.
+ const cvbSubmitIndex=rows.findIndex(p=>/aanleveren beslisnota aan het cvb/i.test(p.name||""));
+ const cvbDecisionIndex=rows.findIndex(p=>/go \/ no go op basis van projectsheet en beslisnota|go \/ no go projectsheet/i.test(p.name||""));
+ if(cvbSubmitIndex>=0){
+  let d=rows[cvbSubmitIndex].end||rows[cvbSubmitIndex].start;
+  let guard=0;
+  while(new Date(d+"T12:00:00").getDay()!==2 && guard++<8)d=plus(d,1);
+  while(isWeekendOrPublicHoliday(d)&&guard++<15)d=plus(d,7);
+  rows[cvbSubmitIndex]={...rows[cvbSubmitIndex],start:d,end:d};
+  if(cvbDecisionIndex>=0){
+   let decision=plus(d,8);
+   // Decision is intended for Wednesday; if that date is a public holiday, move to next available Wednesday.
+   guard=0;
+   while(isWeekendOrPublicHoliday(decision)&&guard++<15)decision=plus(decision,7);
+   rows[cvbDecisionIndex]={...rows[cvbDecisionIndex],start:decision,end:decision};
+  }
+ }
+ // Definitieve termijncontrole/planning Europese openbare procedure:
+ // deadline >= publicatie + 40 kalenderdagen én deadline >= laatste gepubliceerde NvI + 10 kalenderdagen.
+ // Pas dit na alle weekend-, feestdag- en schoolvakantiecorrecties toe, zodat latere correcties dit niet ongedaan maken.
+ if(procType==="open" && publicationIndex>=0 && bidDeadlineIndex>=0){
+  const pubDate=rows[publicationIndex].end;
+  let nviIdx=finalNviItem?.i ?? -1;
+  if(nviIdx>=0){
+   let nviDate=rows[nviIdx].end||rows[nviIdx].start;
+   // De laatste NvI zelf moet op een beschikbare werkdag vallen.
+   let guard=0;
+   while(isWeekendOrPublicHoliday(nviDate)&&guard++<40)nviDate=plus(nviDate,-1);
+   rows[nviIdx]={...rows[nviIdx],start:nviDate,end:nviDate};
+  }
+  const nviDate=nviIdx>=0?(rows[nviIdx].end||rows[nviIdx].start):null;
+  let deadline=plus(pubDate,40);
+  if(nviDate && plus(nviDate,10)>deadline)deadline=plus(nviDate,10);
+  deadline=nextWorkingEndDate(deadline);
+  // If a holiday shift pushes deadline forward, both minimums remain satisfied.
+  rows[bidDeadlineIndex]={...rows[bidDeadlineIndex],start:deadline,end:deadline};
  }
  renderRows(rows);renderDateWarnings(rows);renderLegalChecks(rows);let procIndex=rows.findIndex(x=>/publicatie|selectiefase|uitvraag tot|gunningsfase|offerteaanvraag/i.test(x.name));
  $("startDate").textContent=dmy(rows[0]?.start);$("procDate").textContent=dmy(mode==="publication"?anchor:(rows[procIndex>=0?procIndex:0]?.start));$("contractDate").textContent=mode==="contract"?dmy(anchor):dmy(rows[rows.length-1]?.end);
@@ -368,18 +515,63 @@ function renderRows(rows){
  const alertTag=(date,i)=>{const a=alerts.filter(w=>w.index===i&&w.date===date);return a.length?`<div class="date-alert ${a.some(w=>w.labels.some(x=>x!=="weekend"))?"holiday":""}" title="${esc(a.map(w=>w.labels.join(", ")).join("; "))}">⚠ ${esc(a.flatMap(w=>w.labels).filter((v,j,arr)=>arr.indexOf(v)===j).join(", "))}</div>`:""};
  let out="";
  Object.entries(groups).forEach(([g,items])=>{
-  const starts=items.map(p=>p.start).filter(Boolean).sort(), ends=items.map(p=>p.end).filter(Boolean).sort();
-  const span=starts.length?`${dmy(starts[0])} – ${dmy(ends[ends.length-1])}`:"Nog niet berekend";
-  out+=`<tr class="group-row"><td colspan="6"><button type="button" data-toggle-group="${esc(g)}">${collapsedGroups.has(g)?"＋":"−"} ${esc(g)}</button><span class="group-date">${span}</span><button type="button" data-rename-group="${esc(g)}">Fase hernoemen</button></td></tr>`;
-  items.forEach(p=>{const i=p._i, hide=collapsedGroups.has(g)?" collapsed":"";out+=`<tr class="milestone-row${hide}" data-group-row="${esc(g)}"><td class="phase">${esc(p.name)}</td><td><input type="number" min="0" step="1" data-days="${i}" value="${Number(p.days)||0}" title="Termijn tussen deze mijlpaal en de volgende actie, in dagen"></td><td class="date">${dmy(p.start)}${alertTag(p.start,i)}</td><td class="date">${dmy(p.end)}${alertTag(p.end,i)}</td><td class="small">${esc(p.note||"")}</td><td><button type="button" class="info-btn" data-info="${i}" title="Bekijk termijninformatie" aria-label="Bekijk termijninformatie voor ${esc(p.name)}">i</button> <button class="btn danger" data-remove="${i}" title="Mijlpaal verwijderen">×</button></td></tr>`});
+  const ends=items.map(p=>p.end).filter(Boolean).sort();
+  const starts=items.map(p=>p.start).filter(Boolean).sort();
+  const span=ends.length?`${dmy(starts[0]||ends[0])} – ${dmy(ends[ends.length-1])}`:"Nog niet berekend";
+  out+=`<tr class="group-row"><td colspan="5"><button type="button" data-toggle-group="${esc(g)}">${collapsedGroups.has(g)?"＋":"−"} ${esc(g)}</button><span class="group-date">${span}</span><button type="button" data-add-activity="${esc(g)}">＋ Activiteit toevoegen</button><button type="button" data-rename-group="${esc(g)}">Fase hernoemen</button></td></tr>`;
+  items.forEach(p=>{const i=p._i, hide=collapsedGroups.has(g)?" collapsed":"";out+=`<tr class="milestone-row${hide}" data-group-row="${esc(g)}"><td class="phase">${esc(p.name)}</td><td><input type="number" min="0" step="1" data-days="${i}" value="${Number(p.days)||0}" title="Geplande termijn voor deze mijlpaal, in kalenderdagen"></td><td class="date"><input type="date" class="milestone-date" data-date="${i}" value="${p.end||""}" aria-label="Handmatige einddatum voor ${esc(p.name)}">${alertTag(p.end,i)}</td><td class="small">${esc(p.note||"")}</td><td><button type="button" class="info-btn" data-info="${i}" title="Bekijk termijninformatie" aria-label="Bekijk termijninformatie voor ${esc(p.name)}">i</button> <button class="btn danger" data-remove="${i}" title="Mijlpaal verwijderen">×</button></td></tr>`});
  });
  $("phaseRows").innerHTML=out;
- document.querySelectorAll("[data-days]").forEach(el=>el.onchange=()=>{phases[+el.dataset.days].days=Math.max(0,Number(el.value)||0);calculate()});
+ document.querySelectorAll("[data-days]").forEach(el=>el.onchange=()=>{
+  const i=+el.dataset.days;
+  const duration=Math.max(0,Number(el.value)||0);
+  phases[i].days=duration;
+  // Duration is the calendar-day gap from the preceding milestone to this milestone.
+  // Keep the preceding milestone fixed; move this milestone's end date accordingly.
+  const previousDateInput=i>0?document.querySelector(`[data-date="${i-1}"]`):null;
+  const previousDate=previousDateInput?.value||null;
+  if(previousDate){
+   phases[i-1].manualEnd=previousDate;
+   phases[i].manualEnd=plus(previousDate,duration);
+  } else {
+   phases[i].manualEnd=null;
+  }
+  calculate();
+ });
+ document.querySelectorAll("[data-date]").forEach(el=>el.onchange=()=>{
+  const i=+el.dataset.date;
+  const chosen=el.value||null;
+  if(!chosen){phases[i].manualEnd=null;calculate();return;}
+  // A manually changed milestone date updates the interval leading to it.
+  // Keep the preceding milestone fixed and recalculate the duration in calendar days.
+  const previousInput=i>0?document.querySelector(`[data-date="${i-1}"]`):null;
+  const previousDate=previousInput?.value||null;
+  if(previousDate){
+   phases[i-1].manualEnd=previousDate;
+   phases[i].days=Math.max(0,calendarDaysBetween(previousDate,chosen));
+  }
+  phases[i].manualEnd=chosen;
+  calculate();
+ });
  document.querySelectorAll("[data-info]").forEach(el=>el.onclick=()=>showMilestoneInfo(+el.dataset.info));
  document.querySelectorAll("[data-remove]").forEach(el=>el.onclick=()=>{if(phases.length<=1){alert("Er moet minimaal één mijlpaal overblijven.");return}phases.splice(+el.dataset.remove,1);calculate()});
  document.querySelectorAll("[data-toggle-group]").forEach(el=>el.onclick=()=>{const g=el.dataset.toggleGroup;collapsedGroups.has(g)?collapsedGroups.delete(g):collapsedGroups.add(g);renderRows(rows)});
- document.querySelectorAll("[data-rename-group]").forEach(el=>el.onclick=()=>{const old=el.dataset.renameGroup;const next=prompt("Nieuwe naam voor deze fase:",old);if(next&&next.trim()){phases.forEach((p,i)=>{if(inferredGroup(p,i)===old)p.group=next.trim()});collapsedGroups.delete(old);calculate()}});
+ document.querySelectorAll("[data-rename-group]").forEach(el=>el.onclick=()=>{const old=el.dataset.renameGroup,next=prompt("Nieuwe naam voor deze fase:",old);if(next&&next.trim()){phases.forEach(p=>{if(inferredGroup(p,phases.indexOf(p))===old)p.group=next.trim()});calculate()}});
+ document.querySelectorAll("[data-add-activity]").forEach(el=>el.onclick=()=>{
+  const group=el.dataset.addActivity;
+  const name=prompt(`Naam van de nieuwe activiteit in ${group}:`,"Demonstratie / presentatie / extra vragenronde");
+  if(!name||!name.trim())return;
+  const rawDays=prompt("Doorlooptijd in dagen tot de volgende mijlpaal:","1");
+  if(rawDays===null)return;
+  const days=Math.max(0,Number(rawDays)||0);
+  const activity={group,name:name.trim(),days,note:"Zelf toegevoegde activiteit; controleer de planningstermijn en eventuele proceduretermijnen."};
+  let last=-1;
+  phases.forEach((p,i)=>{if(inferredGroup(p,i)===group)last=i});
+  if(last<0){phases.push(activity)}else{phases.splice(last+1,0,activity)}
+  calculate();
+ });
 }
+
 function renderTimeline(rows,maxDate){
  const phaseOrder=[
   "Fase 1 - Opdrachtformulering",
@@ -480,13 +672,13 @@ function renderVacationTables(){
  $("vacationTables").innerHTML=`<div class="vacation-wide"><table class="vacation-comparison"><thead><tr><th>Vakanties / vrije dagen</th><th>Regio Noord</th><th>Regio Midden</th><th>Regio Zuid</th></tr></thead><tbody>${tableRows}</tbody></table></div>`;
 }
 function setView(view){
- const planning=view==="planning";
+ const planning=view==="planning", vacations=view==="vacations", terms=view==="terms";
  document.querySelector(".layout").classList.toggle("hidden",!planning);
- $("vacationPanel").classList.toggle("hidden",planning);
- $("tabPlanning").classList.toggle("active",planning);$("tabPlanning").setAttribute("aria-selected",String(planning));
- $("tabVacations").classList.toggle("active",!planning);$("tabVacations").setAttribute("aria-selected",String(!planning));
+ $("vacationPanel").classList.toggle("hidden",!vacations);
+ $("termsPanel").classList.toggle("hidden",!terms);
+ [["tabPlanning",planning],["tabVacations",vacations],["tabTerms",terms]].forEach(([id,on])=>{$(id).classList.toggle("active",on);$(id).setAttribute("aria-selected",String(on))});
 }
-$("tabPlanning").onclick=()=>setView("planning");$("tabVacations").onclick=()=>{renderVacationTables();setView("vacations")};$("vacationYear").onchange=renderVacationTables;
+$("tabPlanning").onclick=()=>setView("planning");$("tabVacations").onclick=()=>{renderVacationTables();setView("vacations")};$("tabTerms").onclick=()=>setView("terms");$("vacationYear").onchange=renderVacationTables;
 
 </script>
 </body></html>
